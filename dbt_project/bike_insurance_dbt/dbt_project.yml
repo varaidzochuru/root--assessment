@@ -1,0 +1,39 @@
+# dbt_project.yml
+name: bike_insurance_project
+version: '1.0'
+config-version: 2
+
+profile: bike_insurance_duckdb
+
+# The folder where your models are located
+model-paths: ["/home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/models"]
+
+# The folder where your seeds (CSV files) are located
+seed-paths: ["/home/varaidzochuru/root--assessment/data"]
+
+# Where dbt stores compiled SQL and temporary files
+target-path: "/home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target"
+clean-targets:
+  - "/home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target"
+  - "dbt_modules"
+
+models:
+  bike_insurance_project:
+    staging:
+      +materialized: table  
+    marts:
+      +materialized: table  
+
+seeds:
+  bike_insurance_project:
+    citi_bikes:
+      file: "/home/varaidzochuru/root--assessment/data/citi_bike_sample_data.csv"
+      header: true
+      delimiter: ","
+      quote: '"'
+    weather:
+      file: "/home/varaidzochuru/root--assessment/data/citi_bike_sample_data.csv"
+      header: true
+      delimiter: ","
+      quote: '"'
+
