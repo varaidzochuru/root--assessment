@@ -211,3 +211,38 @@ To run individual models
 e.g dbt run -m stg_weather 
 To run all models in order:
 dbt run
+
+## Part A
+1. The main trade offs with regards to using JSONB  compared to using a normalised schema is that json allows for schema-less storage, making it ideal for variable attributes for example working with the weather data as it is rather what I did in my script where I change to csv format. It supports faster ingestion and easier schema evolution because no table changes are required when attributes change.
+
+But it is difficult to enforce data integrity and constraints such as foreign keys or datatypes and also difficult to join with normalised data in this case the citi bike data came as a csv so it was easier to work with the data in the same format. Query performance can also be compromised on large datasets since JSON must be parsed at runtime, and indexing on nested keys is limited.
+
+JSONB is useful for flexibility and rapid ingestion, but a normalised schema is better for performance, consistency, and long-term analytical use once the schema stabilises.
+
+2.Before sharing the data with actuaries I would start by making sure the data is  complete at ingestion of raw data I would check for any missing trip dates, product types. I would also check row count and ensure it aligns with a working average. I would also check that each ride_id is unique so there are no duplicates. I would also make sure that premiums are always be positive and match the set pricing rules (for example, R15 for a classic bike or R20 for an electric bike). I’d make sure every trip correctly maps to an existing policy and its related weather record to keep referential integrity intact.
+
+I’d also include checks for timeliness to ensure there are no future-dated trips or invalid timestamps, and consistency checks so trip durations make sense (the start time must be before the end time). For business rules, I’d make sure the 120% weather adjustment only applies when is_rainy_or_windy = 1, and that the daily premium correctly adds up per-bike premiums plus the R5 base fee for non-usage.
+
+3.To ensure idempotency, I would make use of primary keys such as ride_id, or composite keys like ride_id + trip_date. This would support incremental loads using a merge strategy that checks row uniqueness before inserting or updating. I’d have the merge logic look back a few days (say, three) so that any delayed or corrected data always gets updated before new rows are inserted. I’d also partition the data by trip_date to make querying faster and reprocessing easier. This setup would make sure that even if older data is re-ingested, it won’t cause duplicates — it’ll simply update existing records and add new ones as needed.
+
+4.If data volume increases a hundredfold, several architectural upgrades are necessary. Move from local DuckDB to a distributed processing engine such as Spark or BigQuery for scalability. Store data in Parquet format and partition by trip_date. Pre-aggregate daily metrics to minimise row-level joins. Introduce indexing or Z-ordering to improve frequent query performance and consider using materialised views.
+
+For orchestration, migrate from ad-hoc execution to Airflow with incremental dbt models. At scale, implement more rigorous data-quality enforcement using dbt tests.
+
+5.A daily active_policy table can be designed using Slowly Changing Dimension Type 2 logic. Each record would include valid_from, valid_to, and an is_current column, where is_current is a boolean (1 for current, 0 for not current). These fields define the date range during which a specific policy state is active. When a policy changes for example, it’s renewed, lapses, or gets cancelled  the existing record is closed by setting valid_to = change_date - 1 and is_current = 0. A new record is then inserted with the updated details, valid_from = change_date, and is_current = 1. This setup makes it easy to track policy history and see which version was active at any given time.
+
+On any date, active policies can be retrieved using:
+WHERE is_current = 1
+
+This approach can be implemented in dbt using the is_incremental() macro, with a composite key made up of (policy_id, valid_from) to track each policy’s state changes over time.
+
+##Part B
+4. Even if utilisation stays the same, the season still matters. Premiums go up in wetter or windier months because the 120% weather adjustment kicks in more often. Whereas in dry seasons most days would use the base rate, so premiums drop. With the same level of usage, seasonal weather differences naturally cause the premiums to fluctuate.
+
+Things to note:
+I only used 100 rows of the citi_bike data from September because there were too many rows and vs code kept on crashing.
+I would have ingested all the files using Airflow and used a better db for example databricks to manage this but because of the Duckdb requirement I kept the load minimal.
+I kept the weather and citi_bike csv but emptied them when pushing to remote.
+
+Not an improvement but suggestion for the challenge:
+Is to allow candidates to use their own database tools as someone who had never worked with duckdb, I spent quite a bit of time trying to understand and it, in terms of installations as well.
