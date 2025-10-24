@@ -48,5 +48,3 @@ select
 from trips t
 left join weather w
     on date_trunc('hour', t.started_at) = w.weather_time
-  
-  

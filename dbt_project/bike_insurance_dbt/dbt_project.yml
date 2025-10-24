@@ -27,13 +27,12 @@ models:
 seeds:
   bike_insurance_project:
     citi_bikes:
-      file: "/home/varaidzochuru/root--assessment/data/citi_bike_sample_data.csv"
+      file: "/home/varaidzochuru/root--assessment/data/citi_bike.csv"
       header: true
       delimiter: ","
       quote: '"'
     weather:
-      file: "/home/varaidzochuru/root--assessment/data/citi_bike_sample_data.csv"
+      file: "/home/varaidzochuru/root--assessment/data/weather.csv"
       header: true
       delimiter: ","
       quote: '"'
-

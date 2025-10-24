@@ -23,5 +23,3 @@ parsed as (
 )
 
 select * from parsed
-
-  
