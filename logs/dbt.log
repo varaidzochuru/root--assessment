@@ -1,0 +1,393 @@
+[0m08:39:08.581356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40cabf410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40ec7a510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40ce259a0>]}
+
+
+============================== 08:39:08.584399 | 486d554c-24d6-4059-bdb0-c80f69bb6de4 ==============================
+[0m08:39:08.584399 [info ] [MainThread]: Running with dbt=1.10.13
+[0m08:39:08.584789 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'target_path': 'None', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'debug': 'False', 'fail_fast': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'warn_error': 'None', 'introspect': 'True', 'version_check': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'log_path': 'logs', 'cache_selected_only': 'False', 'static_parser': 'True', 'empty': 'None', 'profiles_dir': '/home/varaidzochuru/.dbt', 'printer_width': '80'}
+[0m08:39:08.589406 [info ] [MainThread]: dbt version: 1.10.13
+[0m08:39:08.589722 [info ] [MainThread]: python version: 3.12.3
+[0m08:39:08.590073 [info ] [MainThread]: python path: /home/varaidzochuru/root--assessment/venv/bin/python3
+[0m08:39:08.590412 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m08:39:08.669025 [info ] [MainThread]: Using profiles dir at /home/varaidzochuru/.dbt
+[0m08:39:08.669459 [info ] [MainThread]: Using profiles.yml file at /home/varaidzochuru/.dbt/profiles.yml
+[0m08:39:08.669696 [info ] [MainThread]: Using dbt_project.yml file at /home/varaidzochuru/root--assessment/dbt_project.yml
+[0m08:39:08.670937 [info ] [MainThread]: adapter type: duckdb
+[0m08:39:08.671205 [info ] [MainThread]: adapter version: 1.9.6
+[0m08:39:08.671424 [info ] [MainThread]: Configuration:
+[0m08:39:08.671616 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:39:08.671794 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m08:39:08.671964 [info ] [MainThread]: Required dependencies:
+[0m08:39:08.672159 [debug] [MainThread]: Executing "git --help"
+[0m08:39:08.683541 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:39:08.684144 [debug] [MainThread]: STDERR: "b''"
+[0m08:39:08.684362 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:39:08.684570 [info ] [MainThread]: Connection:
+[0m08:39:08.684763 [info ] [MainThread]:   database: bike_insurance
+[0m08:39:08.684938 [info ] [MainThread]:   schema: main
+[0m08:39:08.685112 [info ] [MainThread]:   path: /home/varaidzochuru/root--assessment/duckdb/bike_insurance.duckdb
+[0m08:39:08.685311 [info ] [MainThread]:   config_options: None
+[0m08:39:08.685627 [info ] [MainThread]:   extensions: []
+[0m08:39:08.685830 [info ] [MainThread]:   settings: {}
+[0m08:39:08.686013 [info ] [MainThread]:   external_root: .
+[0m08:39:08.686214 [info ] [MainThread]:   use_credential_provider: None
+[0m08:39:08.686404 [info ] [MainThread]:   attach: None
+[0m08:39:08.686605 [info ] [MainThread]:   filesystems: None
+[0m08:39:08.686876 [info ] [MainThread]:   remote: None
+[0m08:39:08.687127 [info ] [MainThread]:   plugins: None
+[0m08:39:08.687315 [info ] [MainThread]:   disable_transactions: False
+[0m08:39:08.687605 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m08:39:08.726357 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m08:39:08.740739 [debug] [MainThread]: Using duckdb connection "debug"
+[0m08:39:08.741064 [debug] [MainThread]: On debug: select 1 as id
+[0m08:39:08.741250 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:39:08.761053 [debug] [MainThread]: SQL status: OK in 0.020 seconds
+[0m08:39:08.761735 [debug] [MainThread]: On debug: Close
+[0m08:39:08.762056 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:39:08.762317 [info ] [MainThread]: [31m1 check failed:[0m
+[0m08:39:08.762511 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/varaidzochuru/root--assessment/dbt_project.yml> not found
+
+[0m08:39:08.763501 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.21674904, "process_in_blocks": "10184", "process_kernel_time": 0.094879, "process_mem_max_rss": "137748", "process_out_blocks": "40", "process_user_time": 0.86973}
+[0m08:39:08.763836 [debug] [MainThread]: Command `dbt debug` failed at 08:39:08.763766 after 0.22 seconds
+[0m08:39:08.764092 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:39:08.764313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40c0b2840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40bf73c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc40bf73b90>]}
+[0m08:39:08.764559 [debug] [MainThread]: Flushing usage events
+[0m08:39:09.987502 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:39:59.690494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab9efea20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab959a900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab959b620>]}
+
+
+============================== 08:39:59.693611 | e61e3cf5-76df-4fc7-ae9a-fc64e285db14 ==============================
+[0m08:39:59.693611 [info ] [MainThread]: Running with dbt=1.10.13
+[0m08:39:59.693996 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'no_print': 'None', 'profiles_dir': '/home/varaidzochuru/.dbt', 'target_path': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt debug', 'log_format': 'default', 'printer_width': '80', 'introspect': 'True', 'write_json': 'True', 'log_path': '/home/varaidzochuru/root--assessment/logs', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'cache_selected_only': 'False', 'empty': 'None'}
+[0m08:39:59.706990 [info ] [MainThread]: dbt version: 1.10.13
+[0m08:39:59.707356 [info ] [MainThread]: python version: 3.12.3
+[0m08:39:59.707570 [info ] [MainThread]: python path: /home/varaidzochuru/root--assessment/venv/bin/python3
+[0m08:39:59.707765 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m08:39:59.780585 [info ] [MainThread]: Using profiles dir at /home/varaidzochuru/.dbt
+[0m08:39:59.780925 [info ] [MainThread]: Using profiles.yml file at /home/varaidzochuru/.dbt/profiles.yml
+[0m08:39:59.781137 [info ] [MainThread]: Using dbt_project.yml file at /home/varaidzochuru/root--assessment/dbt_project.yml
+[0m08:39:59.781859 [info ] [MainThread]: adapter type: duckdb
+[0m08:39:59.782095 [info ] [MainThread]: adapter version: 1.9.6
+[0m08:39:59.784665 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m08:39:59.784943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'e61e3cf5-76df-4fc7-ae9a-fc64e285db14', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab8b3b110>]}
+[0m08:39:59.845799 [info ] [MainThread]: Configuration:
+[0m08:39:59.846387 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:39:59.846668 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:39:59.846927 [info ] [MainThread]: Required dependencies:
+[0m08:39:59.847212 [debug] [MainThread]: Executing "git --help"
+[0m08:39:59.848635 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:39:59.849021 [debug] [MainThread]: STDERR: "b''"
+[0m08:39:59.849241 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:39:59.849503 [info ] [MainThread]: Connection:
+[0m08:39:59.849770 [info ] [MainThread]:   database: bike_insurance
+[0m08:39:59.849975 [info ] [MainThread]:   schema: main
+[0m08:39:59.850171 [info ] [MainThread]:   path: /home/varaidzochuru/root--assessment/duckdb/bike_insurance.duckdb
+[0m08:39:59.850356 [info ] [MainThread]:   config_options: None
+[0m08:39:59.850532 [info ] [MainThread]:   extensions: []
+[0m08:39:59.850700 [info ] [MainThread]:   settings: {}
+[0m08:39:59.850865 [info ] [MainThread]:   external_root: .
+[0m08:39:59.851030 [info ] [MainThread]:   use_credential_provider: None
+[0m08:39:59.851345 [info ] [MainThread]:   attach: None
+[0m08:39:59.851559 [info ] [MainThread]:   filesystems: None
+[0m08:39:59.851756 [info ] [MainThread]:   remote: None
+[0m08:39:59.851936 [info ] [MainThread]:   plugins: None
+[0m08:39:59.852110 [info ] [MainThread]:   disable_transactions: False
+[0m08:39:59.852392 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m08:39:59.885607 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m08:39:59.898235 [debug] [MainThread]: Using duckdb connection "debug"
+[0m08:39:59.898508 [debug] [MainThread]: On debug: select 1 as id
+[0m08:39:59.898692 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:39:59.906764 [debug] [MainThread]: SQL status: OK in 0.008 seconds
+[0m08:39:59.907442 [debug] [MainThread]: On debug: Close
+[0m08:39:59.907704 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:39:59.907941 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:39:59.908269 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m08:39:59.908891 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.25416937, "process_in_blocks": "50016", "process_kernel_time": 0.174502, "process_mem_max_rss": "138980", "process_out_blocks": "24", "process_user_time": 0.938434}
+[0m08:39:59.909230 [debug] [MainThread]: Command `dbt debug` succeeded at 08:39:59.909176 after 0.25 seconds
+[0m08:39:59.909446 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:39:59.909694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703abab5c7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab8acc2f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703ab9a303e0>]}
+[0m08:39:59.909926 [debug] [MainThread]: Flushing usage events
+[0m08:40:01.361085 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:46:48.801729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db3dc3e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db3b298e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db4387440>]}
+
+
+============================== 08:46:48.803750 | fd653eac-58c9-4858-924b-d812aeb9070f ==============================
+[0m08:46:48.803750 [info ] [MainThread]: Running with dbt=1.10.13
+[0m08:46:48.804116 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'log_path': '/home/varaidzochuru/root--assessment/logs', 'static_parser': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'use_colors': 'True', 'debug': 'False', 'fail_fast': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'log_cache_events': 'False', 'profiles_dir': '/home/varaidzochuru/.dbt', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'partial_parse': 'True', 'empty': 'None'}
+[0m08:46:48.809293 [info ] [MainThread]: dbt version: 1.10.13
+[0m08:46:48.809613 [info ] [MainThread]: python version: 3.12.3
+[0m08:46:48.809824 [info ] [MainThread]: python path: /home/varaidzochuru/root--assessment/venv/bin/python3
+[0m08:46:48.810025 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m08:46:48.876856 [info ] [MainThread]: Using profiles dir at /home/varaidzochuru/.dbt
+[0m08:46:48.877217 [info ] [MainThread]: Using profiles.yml file at /home/varaidzochuru/.dbt/profiles.yml
+[0m08:46:48.877427 [info ] [MainThread]: Using dbt_project.yml file at /home/varaidzochuru/root--assessment/dbt_project.yml
+[0m08:46:48.878147 [info ] [MainThread]: adapter type: duckdb
+[0m08:46:48.878397 [info ] [MainThread]: adapter version: 1.9.6
+[0m08:46:48.881050 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m08:46:48.881358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'fd653eac-58c9-4858-924b-d812aeb9070f', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db33e08f0>]}
+[0m08:46:48.941944 [info ] [MainThread]: Configuration:
+[0m08:46:48.942307 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:46:48.942517 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:46:48.942700 [info ] [MainThread]: Required dependencies:
+[0m08:46:48.942895 [debug] [MainThread]: Executing "git --help"
+[0m08:46:48.944020 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:46:48.944324 [debug] [MainThread]: STDERR: "b''"
+[0m08:46:48.944529 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:46:48.944736 [info ] [MainThread]: Connection:
+[0m08:46:48.944931 [info ] [MainThread]:   database: bike_insurance
+[0m08:46:48.945116 [info ] [MainThread]:   schema: main
+[0m08:46:48.945289 [info ] [MainThread]:   path: /home/varaidzochuru/root--assessment/duckdb/bike_insurance.duckdb
+[0m08:46:48.945473 [info ] [MainThread]:   config_options: None
+[0m08:46:48.945667 [info ] [MainThread]:   extensions: []
+[0m08:46:48.945848 [info ] [MainThread]:   settings: {}
+[0m08:46:48.946018 [info ] [MainThread]:   external_root: .
+[0m08:46:48.946197 [info ] [MainThread]:   use_credential_provider: None
+[0m08:46:48.946362 [info ] [MainThread]:   attach: None
+[0m08:46:48.946526 [info ] [MainThread]:   filesystems: None
+[0m08:46:48.946695 [info ] [MainThread]:   remote: None
+[0m08:46:48.946862 [info ] [MainThread]:   plugins: None
+[0m08:46:48.947025 [info ] [MainThread]:   disable_transactions: False
+[0m08:46:48.947301 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m08:46:48.977997 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m08:46:48.990984 [debug] [MainThread]: Using duckdb connection "debug"
+[0m08:46:48.991266 [debug] [MainThread]: On debug: select 1 as id
+[0m08:46:48.991469 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:46:48.999291 [debug] [MainThread]: SQL status: OK in 0.008 seconds
+[0m08:46:49.000023 [debug] [MainThread]: On debug: Close
+[0m08:46:49.000291 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:46:49.000529 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:46:49.000858 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m08:46:49.001435 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.23335196, "process_in_blocks": "0", "process_kernel_time": 0.099321, "process_mem_max_rss": "138948", "process_out_blocks": "24", "process_user_time": 0.90535}
+[0m08:46:49.001719 [debug] [MainThread]: Command `dbt debug` succeeded at 08:46:49.001662 after 0.23 seconds
+[0m08:46:49.001923 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:46:49.002130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db5fae7b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6da369d070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6db344ac00>]}
+[0m08:46:49.002375 [debug] [MainThread]: Flushing usage events
+[0m08:46:50.182470 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:05:40.460427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785521ae5430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785521edd8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7855215ae3c0>]}
+
+
+============================== 09:05:40.462594 | bff5a3f1-2d48-4f95-bea1-0a85b8a29455 ==============================
+[0m09:05:40.462594 [info ] [MainThread]: Running with dbt=1.10.13
+[0m09:05:40.462958 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'use_colors': 'True', 'empty': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'profiles_dir': '/home/varaidzochuru/.dbt', 'log_format': 'default', 'fail_fast': 'False', 'introspect': 'True', 'warn_error': 'None', 'invocation_command': 'dbt seed', 'no_print': 'None', 'partial_parse': 'True', 'cache_selected_only': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_path': '/home/varaidzochuru/root--assessment/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'debug': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m09:05:40.534682 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m09:05:40.535175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785521643320>]}
+[0m09:05:40.606897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785511a53260>]}
+[0m09:05:40.645751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7855215885c0>]}
+[0m09:05:40.646751 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m09:05:40.686082 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m09:05:40.730787 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m09:05:40.731149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785521f26b70>]}
+[0m09:05:41.389690 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- seeds.bike_insurance_project.citi_bikes
+[0m09:05:41.392758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7855118ae2a0>]}
+[0m09:05:41.430723 [debug] [MainThread]: Wrote artifact WritableManifest to /home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target/manifest.json
+[0m09:05:41.432192 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target/semantic_manifest.json
+[0m09:05:41.442425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78548f553ce0>]}
+[0m09:05:41.442771 [info ] [MainThread]: Found 5 models, 2 seeds, 444 macros
+[0m09:05:41.443008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785511739100>]}
+[0m09:05:41.443997 [info ] [MainThread]: 
+[0m09:05:41.444279 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:05:41.444482 [info ] [MainThread]: 
+[0m09:05:41.444798 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:05:41.447616 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_bike_insurance'
+[0m09:05:41.467806 [debug] [ThreadPool]: Using duckdb connection "list_bike_insurance"
+[0m09:05:41.468173 [debug] [ThreadPool]: On list_bike_insurance: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "connection_name": "list_bike_insurance"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"bike_insurance"'
+    
+  
+  
+[0m09:05:41.468374 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:05:41.481060 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m09:05:41.482076 [debug] [ThreadPool]: On list_bike_insurance: Close
+[0m09:05:41.482699 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_bike_insurance, now create_bike_insurance_main)
+[0m09:05:41.483194 [debug] [ThreadPool]: Creating schema "database: "bike_insurance"
+schema: "main"
+"
+[0m09:05:41.487355 [debug] [ThreadPool]: Using duckdb connection "create_bike_insurance_main"
+[0m09:05:41.487578 [debug] [ThreadPool]: On create_bike_insurance_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "connection_name": "create_bike_insurance_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='bike_insurance'
+        and type='sqlite'
+    
+  
+[0m09:05:41.487756 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:05:41.489033 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:05:41.489829 [debug] [ThreadPool]: Using duckdb connection "create_bike_insurance_main"
+[0m09:05:41.490046 [debug] [ThreadPool]: On create_bike_insurance_main: BEGIN
+[0m09:05:41.490517 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:05:41.490715 [debug] [ThreadPool]: Using duckdb connection "create_bike_insurance_main"
+[0m09:05:41.490887 [debug] [ThreadPool]: On create_bike_insurance_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "connection_name": "create_bike_insurance_main"} */
+
+    
+    
+        create schema if not exists "bike_insurance"."main"
+    
+[0m09:05:41.491312 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:05:41.491808 [debug] [ThreadPool]: On create_bike_insurance_main: COMMIT
+[0m09:05:41.492062 [debug] [ThreadPool]: Using duckdb connection "create_bike_insurance_main"
+[0m09:05:41.492251 [debug] [ThreadPool]: On create_bike_insurance_main: COMMIT
+[0m09:05:41.492713 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:05:41.492921 [debug] [ThreadPool]: On create_bike_insurance_main: Close
+[0m09:05:41.493933 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_bike_insurance_main, now list_bike_insurance_main)
+[0m09:05:41.497082 [debug] [ThreadPool]: Using duckdb connection "list_bike_insurance_main"
+[0m09:05:41.497295 [debug] [ThreadPool]: On list_bike_insurance_main: BEGIN
+[0m09:05:41.497472 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:05:41.498021 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:05:41.498239 [debug] [ThreadPool]: Using duckdb connection "list_bike_insurance_main"
+[0m09:05:41.498419 [debug] [ThreadPool]: On list_bike_insurance_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "connection_name": "list_bike_insurance_main"} */
+select
+      'bike_insurance' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'bike_insurance'
+  
+[0m09:05:41.507403 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m09:05:41.508231 [debug] [ThreadPool]: On list_bike_insurance_main: ROLLBACK
+[0m09:05:41.509232 [debug] [ThreadPool]: Failed to rollback 'list_bike_insurance_main'
+[0m09:05:41.509451 [debug] [ThreadPool]: On list_bike_insurance_main: Close
+[0m09:05:41.509929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7854e27da990>]}
+[0m09:05:41.510266 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:05:41.510468 [debug] [MainThread]: On master: BEGIN
+[0m09:05:41.510641 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:05:41.511097 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:05:41.511300 [debug] [MainThread]: On master: COMMIT
+[0m09:05:41.511467 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:05:41.511623 [debug] [MainThread]: On master: COMMIT
+[0m09:05:41.512423 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:05:41.512652 [debug] [MainThread]: On master: Close
+[0m09:05:41.514985 [debug] [Thread-1 (]: Began running node seed.bike_insurance_project.citi_bike
+[0m09:05:41.515344 [info ] [Thread-1 (]: 1 of 2 START seed file main.citi_bike .......................................... [RUN]
+[0m09:05:41.515681 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_bike_insurance_main, now seed.bike_insurance_project.citi_bike)
+[0m09:05:41.515897 [debug] [Thread-1 (]: Began compiling node seed.bike_insurance_project.citi_bike
+[0m09:05:41.516130 [debug] [Thread-1 (]: Began executing node seed.bike_insurance_project.citi_bike
+[0m09:05:41.535550 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.citi_bike"
+[0m09:05:41.535942 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: BEGIN
+[0m09:05:41.536205 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:05:41.537024 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:05:41.537293 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.citi_bike"
+[0m09:05:41.537513 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "node_id": "seed.bike_insurance_project.citi_bike"} */
+
+    create table "bike_insurance"."main"."citi_bike" ("ride_id" text,"rideable_type" text,"started_at" text,"ended_at" text,"start_station_name" text,"start_station_id" float8,"end_station_name" text,"end_station_id" float8,"start_lat" float8,"start_lng" float8,"end_lat" float8,"end_lng" float8,"member_casual" text)
+  
+[0m09:05:41.539231 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:05:41.545563 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.citi_bike"
+[0m09:05:41.545825 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: 
+          COPY "bike_insurance"."main"."citi_bike" FROM '/home/varaidzochuru/root--assessment/data/citi_bike.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m09:05:41.558897 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m09:05:41.562101 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.bike_insurance_project.citi_bike"
+[0m09:05:41.569893 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: COMMIT
+[0m09:05:41.570178 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.citi_bike"
+[0m09:05:41.570441 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: COMMIT
+[0m09:05:41.573415 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:05:41.574657 [debug] [Thread-1 (]: On seed.bike_insurance_project.citi_bike: Close
+[0m09:05:41.576086 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78548f53fa40>]}
+[0m09:05:41.576526 [info ] [Thread-1 (]: 1 of 2 OK loaded seed file main.citi_bike ...................................... [[32mINSERT 100[0m in 0.06s]
+[0m09:05:41.576972 [debug] [Thread-1 (]: Finished running node seed.bike_insurance_project.citi_bike
+[0m09:05:41.577244 [debug] [Thread-1 (]: Began running node seed.bike_insurance_project.weather
+[0m09:05:41.577666 [info ] [Thread-1 (]: 2 of 2 START seed file main.weather ............................................ [RUN]
+[0m09:05:41.578025 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.bike_insurance_project.citi_bike, now seed.bike_insurance_project.weather)
+[0m09:05:41.578249 [debug] [Thread-1 (]: Began compiling node seed.bike_insurance_project.weather
+[0m09:05:41.578452 [debug] [Thread-1 (]: Began executing node seed.bike_insurance_project.weather
+[0m09:05:41.585015 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.weather"
+[0m09:05:41.585281 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: BEGIN
+[0m09:05:41.585494 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:05:41.586134 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:05:41.586362 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.weather"
+[0m09:05:41.586550 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bike_insurance_duckdb", "target_name": "dev", "node_id": "seed.bike_insurance_project.weather"} */
+
+    create table "bike_insurance"."main"."weather" ("time" timestamp without time zone,"temperature_2m" float8,"wind_speed_10m" float8,"relative_humidity_2m" integer,"precipitation" float8)
+  
+[0m09:05:41.587234 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:05:41.587984 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.weather"
+[0m09:05:41.588251 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: 
+          COPY "bike_insurance"."main"."weather" FROM '/home/varaidzochuru/root--assessment/data/weather.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m09:05:41.596705 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m09:05:41.597291 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.bike_insurance_project.weather"
+[0m09:05:41.598669 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: COMMIT
+[0m09:05:41.598950 [debug] [Thread-1 (]: Using duckdb connection "seed.bike_insurance_project.weather"
+[0m09:05:41.599149 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: COMMIT
+[0m09:05:41.601831 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:05:41.602370 [debug] [Thread-1 (]: On seed.bike_insurance_project.weather: Close
+[0m09:05:41.602835 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bff5a3f1-2d48-4f95-bea1-0a85b8a29455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78548e9df890>]}
+[0m09:05:41.603166 [info ] [Thread-1 (]: 2 of 2 OK loaded seed file main.weather ........................................ [[32mINSERT 168[0m in 0.02s]
+[0m09:05:41.603642 [debug] [Thread-1 (]: Finished running node seed.bike_insurance_project.weather
+[0m09:05:41.604972 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:05:41.605201 [debug] [MainThread]: On master: BEGIN
+[0m09:05:41.605384 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:05:41.605955 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:05:41.606214 [debug] [MainThread]: On master: COMMIT
+[0m09:05:41.606405 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:05:41.606576 [debug] [MainThread]: On master: COMMIT
+[0m09:05:41.607039 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:05:41.607282 [debug] [MainThread]: On master: Close
+[0m09:05:41.607570 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:05:41.607755 [debug] [MainThread]: Connection 'seed.bike_insurance_project.weather' was properly closed.
+[0m09:05:41.607954 [info ] [MainThread]: 
+[0m09:05:41.608193 [info ] [MainThread]: Finished running 2 seeds in 0 hours 0 minutes and 0.16 seconds (0.16s).
+[0m09:05:41.608644 [debug] [MainThread]: Command end result
+[0m09:05:41.622393 [debug] [MainThread]: Wrote artifact WritableManifest to /home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target/manifest.json
+[0m09:05:41.623759 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target/semantic_manifest.json
+[0m09:05:41.627679 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/varaidzochuru/root--assessment/dbt_project/bike_insurance_dbt/target/run_results.json
+[0m09:05:41.627951 [info ] [MainThread]: 
+[0m09:05:41.628270 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:05:41.628476 [info ] [MainThread]: 
+[0m09:05:41.628689 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m09:05:41.628996 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m09:05:41.629623 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 1.2017528, "process_in_blocks": "10632", "process_kernel_time": 0.149215, "process_mem_max_rss": "157504", "process_out_blocks": "2896", "process_user_time": 1.76763}
+[0m09:05:41.629940 [debug] [MainThread]: Command `dbt seed` succeeded at 09:05:41.629872 after 1.20 seconds
+[0m09:05:41.630183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7855216c8590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785521a08aa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7855224704d0>]}
+[0m09:05:41.630420 [debug] [MainThread]: Flushing usage events
+[0m09:05:43.066995 [debug] [MainThread]: An error was encountered while trying to flush usage events

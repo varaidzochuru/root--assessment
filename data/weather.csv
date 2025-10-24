@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "bike_insurance"."main"."weather" ("time" timestamp without time zone,"temperature_2m" float8,"wind_speed_10m" float8,"relative_humidity_2m" integer,"precipitation" float8)
+  ;
+    -- dbt seed --
+    
+          COPY "bike_insurance"."main"."weather" FROM '/home/varaidzochuru/root--assessment/data/weather.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

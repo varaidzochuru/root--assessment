@@ -1,0 +1,18 @@
+{
+    "missing_started_at": 0,
+    "missing_ended_at": 0,
+    "missing_precipitation_records": 0,
+    "missing_wind_records": 0,
+    "invalid_durations": 0,
+    "invalid_rideable_types": [],
+    "negative_premiums": 0,
+    "min_trip_date": "2025-09-01 00:00:00",
+    "max_trip_date": "2025-09-14 00:00:00",
+    "rainy_day_premium_mean": NaN,
+    "normal_day_premium_mean": NaN,
+    "total_trips": 100,
+    "nulls_in_premium": 0,
+    "avg_premium": 18.8,
+    "rows_with_missing_weather": 100,
+    "total_days": 14
+}
